@@ -42,4 +42,4 @@ jobs:
         env:
           USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
           ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-        run: ./run-instrumented-tests.sh
+        run: ./.github/run-instrumented-tests.sh
