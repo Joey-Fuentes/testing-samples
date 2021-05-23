@@ -14,11 +14,19 @@ jobs:
     steps:
       - name: Checkout the code
         uses: actions/checkout@v2
-      - name: Build the app
+      - name: Build the test app
         working-directory: ui/espresso/BasicSample/
         run: ./gradlew assembleAndroidTest
-      - name: Upload APK
+      - name: Upload test APK
         uses: actions/upload-artifact@v1
         with:
           name: test-app
           path: ui/espresso/BasicSample/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
+      - name: Build the app
+        working-directory: ui/espresso/BasicSample/
+        run: ./gradlew assembleDebug
+      - name: Upload APK
+        uses: actions/upload-artifact@v1
+        with:
+          name: app
+          path: ui/espresso/BasicSample/app/build/outputs/apk/debug/app-debug.apk
