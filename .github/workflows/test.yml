@@ -1,0 +1,24 @@
+name: Android Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+      - name: Build the app
+        working-directory: ui/espresso/BasicSample/
+        run: ./gradlew assembleAndroidTest
+      - name: Upload APK
+        uses: actions/upload-artifact@v1
+        with:
+          name: test-app
+          path: ui/espresso/BasicSample/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
