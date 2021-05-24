@@ -15,7 +15,7 @@
   ~ limitations under the License.
   -->
 <resources>
-    <string name="app_name">Basic Espresso sample</string>
+    <string name="app_name">New App</string>
     <string name="hello_world">Hello Espresso!</string>
     <string name="change_text">Change text</string>
     <string name="type_something">type something…</string>
